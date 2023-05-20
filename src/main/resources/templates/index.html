@@ -18,7 +18,11 @@
             <td th:text = "${stud.name}"></td>
             <td th:text = "${stud.surname}"></td>
             <td th:text = "${stud.exam}"></td>
-            <td th:text = "${stud.mark}"></td>
+            <td><span th:if = "${stud.exam >=90}">A</span>
+                <span th:if = "${stud.exam >=75 and stud.exam <= 89}">B</span>
+                <span th:if = "${stud.exam >=60 and stud.exam<=74}">C</span>
+                <span th:if = "${stud.exam >=49 and stud.exam<=59}">D</span>
+                <span th:if = "${stud.exam <49}">F</span></td>
         </tr>
         </tbody>
     </table>
